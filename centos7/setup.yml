@@ -1,0 +1,10 @@
+---
+- name: Forwarding DNS Server
+  hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - init/origin
+    - init/serverspec
+    - setup/bind
+    - setup/bind_spec
