@@ -1,0 +1,11 @@
+---
+- name: Django Web Server
+  hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - init/origin
+    - init/cloudwatch_client
+    - init/serverspec
+    - setup/nginx
+    - setup/nginx_spec
