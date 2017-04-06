@@ -2,8 +2,7 @@
   "_comment": "Build with `packer build django.json`",
   "variables": {
     "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
-    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
-    "aws_ami_amazon_linux": "ami-56d4ad31"
+    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}"
   },
   "builders": [
     {
@@ -13,7 +12,7 @@
       "instance_type": "t2.micro",
       "name": "builder-aws-ansible",
       "region": "ap-northeast-1",
-      "source_ami": "{{user `aws_ami_amazon_linux`}}",
+      "source_ami": "ami-56d4ad31",
       "ssh_username": "ec2-user",
       "ssh_timeout": "5m",
       "ssh_pty" : true,
@@ -26,7 +25,7 @@
       "instance_type": "t2.micro",
       "name": "builder-aws-ansible-local",
       "region": "ap-northeast-1",
-      "source_ami": "{{user `aws_ami_amazon_linux`}}",
+      "source_ami": "ami-56d4ad31",
       "ssh_username": "ec2-user",
       "ssh_timeout": "5m",
       "ssh_pty" : true,
@@ -157,17 +156,17 @@
       ],
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
-        "script/fix-slow-dns.sh",
-        "script/sshd.sh",
-        "script/update.sh",
-        "script/vagrant.sh",
-        "script/desktop.sh",
-        "script/vmware.sh",
-        "script/virtualbox.sh",
-        "script/parallels.sh",
-        "script/motd.sh",
-        "custom-script.sh",
-        "script/cleanup.sh"
+        "../../box-cutter/script/fix-slow-dns.sh",
+        "../../box-cutter/script/sshd.sh",
+        "../../box-cutter/script/update.sh",
+        "../../box-cutter/script/vagrant.sh",
+        "../../box-cutter/script/desktop.sh",
+        "../../box-cutter/script/vmware.sh",
+        "../../box-cutter/script/virtualbox.sh",
+        "../../box-cutter/script/parallels.sh",
+        "../../box-cutter/script/motd.sh",
+        "../../box-cutter/custom-script.sh",
+        "../../box-cutter/script/cleanup.sh"
       ],
       "type": "shell",
       "except": ["builder-aws-ansible", "builder-aws-ansible-local"]

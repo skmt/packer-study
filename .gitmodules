@@ -1,3 +1,6 @@
 [submodule "demo"]
 	path = demo
 	url = https://github.com/skmt/ansible-study
+[submodule "box-cutter"]
+	path = box-cutter
+	url = https://github.com/boxcutter/centos
