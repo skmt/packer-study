@@ -1,5 +1,5 @@
-[submodule "demo"]
-	path = demo
+[submodule "ansible"]
+	path = ansible
 	url = https://github.com/skmt/ansible-study
 [submodule "box-cutter"]
 	path = box-cutter
