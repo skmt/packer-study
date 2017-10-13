@@ -12,7 +12,7 @@
       "instance_type": "t2.micro",
       "name": "builder-aws-ansible",
       "region": "ap-northeast-1",
-      "source_ami": "ami-56d4ad31",
+      "source_ami": "ami-2a69be4c",
       "ssh_username": "ec2-user",
       "ssh_timeout": "5m",
       "ssh_pty" : true,
